@@ -14,7 +14,7 @@
     </aside>
 
     <main>
-        <app-note-view [id]="curNoteId" *ngIf="curNoteId !== -1; else noNote"></app-note-view>
+        <app-note-view class="note-view" [id]="curNoteId" *ngIf="curNoteId !== -1; else noNote"></app-note-view>
     </main>
 </div>
 
