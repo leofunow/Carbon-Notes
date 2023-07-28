@@ -1,0 +1,3 @@
+<input class="title" (input)="inputTitle($event)" [(ngModel)]="title"
+    (keydown.enter)="switchToDescription($event)" placeholder="Заголовок">
+<div class="description" (input)="inputData()" [(ngModel)]="description" contenteditable placeholder="Описание"></div>

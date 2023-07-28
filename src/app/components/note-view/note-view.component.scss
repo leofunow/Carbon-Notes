@@ -1,0 +1,22 @@
+.title,
+.description{
+    border: none;
+    outline: none;
+    margin-bottom: 12px;
+    &[placeholder]:empty::before {
+        content: attr(placeholder);
+        color: var(--secondary); 
+        cursor: text;
+    }
+}
+
+.title{
+    color: var(--primary);
+    font-size: 32px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.description{
+    height: 100%;
+}

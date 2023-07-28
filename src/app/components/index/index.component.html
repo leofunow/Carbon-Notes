@@ -1,0 +1,23 @@
+<div class="content">
+    <header>
+        <h1>Мои заметки</h1>
+        <button class="button-primary" (click)="addNote()">Добавить</button>
+    </header>
+
+    <aside>
+        <div [class]="getNoteClass(note.id)" *ngFor="let note of notes" (click)="selectNote(note.id)">
+            <h3>{{note.title | truncate: 26}}</h3>
+            <button class="button-icon" (click)="deleteNote(note.id, $event)">
+                <svg-icon class="aside-note__icon" src="assets/icons/delete-bin-line.svg" fill="white"></svg-icon>
+            </button>
+        </div>
+    </aside>
+
+    <main>
+        <app-note-view [id]="curNoteId" *ngIf="curNoteId !== -1; else noNote"></app-note-view>
+    </main>
+</div>
+
+<ng-template #noNote>
+    <h1>Выберите или создайте заметку</h1>
+</ng-template>
